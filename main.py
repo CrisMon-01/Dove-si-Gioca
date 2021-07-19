@@ -9,7 +9,7 @@ URL = "https://www.adm.gov.it/portale/monopoli/giochi/giochi_sport/scommesse_fis
 json_data = {}
 try:
     driver = webdriver.Firefox()
-    fileR = open("./codicicomunidiroma.txt",'r')
+    fileR = open("./resources/codicicomunidiroma.txt",'r')
     for line in fileR:
         URL_SCRAPE = URL+line
         driver.get(URL_SCRAPE)
@@ -30,6 +30,5 @@ try:
     driver.quit()
     fileR.close()
 except :
-    print(json.dumps(json_data, indent=4, sort_keys=True))
     driver.quit()
     fileR.close()
